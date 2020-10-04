@@ -1,38 +1,46 @@
-.App {
-  text-align: center;
+
+.Assignature svg {
+    width: 40%;
+    height: 40%;
+    /* fill: #65bbf2; */
+    fill: transparent;
+    stroke: black;
+    stroke-width: 4px;
+    stroke-dasharray: var(--assignaturePathLength); 
+    stroke-dashoffset: 0; 
+		animation: 5s drawAssignature infinite alternate;	
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Twitter svg {
+    width: 40%;
+    height: 40%;
+    fill: #65bbf2;
+    /* fill: transparent; */
+    stroke: black;
+    stroke-width: 4px;
+    stroke-dasharray: var(--twitterPathLength); 
+    stroke-dashoffset: 0; 
+        animation: 5s drawTwitter infinite alternate;	
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+@keyframes drawAssignature {
   to {
-    transform: rotate(360deg);
+		/* Inicio: Ponto inicial */
+    stroke-dashoffset: var(--assignaturePathLength);     
+  }  
+  from {
+		/* Fim: Altera o início para 0 */
+    stroke-dashoffset: 0;    
+  }  
+}  
+
+@keyframes drawTwitter {
+  to {
+		/* Inicio: Ponto inicial */
+    stroke-dashoffset: var(--twitterPathLength); 
+  }
+  from {
+		/* Fim: Altera o início para 0 */
+    stroke-dashoffset: 0;
   }
 }
